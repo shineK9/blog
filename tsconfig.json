@@ -1,0 +1,7 @@
+{
+	"compilerOptions": {
+		"allowJs": true
+	},
+	"include": ["./**/*.ts", "./**/*.vue", "./**/*.d.ts", "./.nuxt/**/*.d.ts"],
+  "extends": "./.nuxt/tsconfig.json"
+}
