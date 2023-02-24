@@ -27,6 +27,7 @@ export default defineNuxtConfig({
     [
       "@nuxt/content",
       {
+				documentDriven: true,
         sources: {
           // overwrite default source AKA `content` directory
           content: {

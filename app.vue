@@ -10,7 +10,9 @@ import "animate.css";
 				enter-active-class="animate__animated animate__tada"
 				leave-active-class="animate__animated animate__bounceOutRight"
 			>
-				<NuxtPage />
+				<div>
+					<NuxtPage />
+				</div>
 			</Transition>
     </main>
   </div>

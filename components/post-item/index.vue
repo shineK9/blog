@@ -1,11 +1,12 @@
 <script setup lang="ts">
-import {ParsedContent} from '@nuxt/content/dist/runtime/types';
+import { ParsedContent } from "@nuxt/content/dist/runtime/types";
 
 interface PostItemProps {
   item: ParsedContent;
 }
 
-const {item} = defineProps<PostItemProps>();
+const { item } = defineProps<PostItemProps>();
+console.log('item', item)
 </script>
 
 <template>
@@ -24,7 +25,7 @@ const {item} = defineProps<PostItemProps>();
         >
       </div>
     </div>
-    <img src="/omori-release-date.jpg" alt="omori" />
+    <img :src="item.banner" alt="omori" />
   </div>
 </template>
 
@@ -34,15 +35,15 @@ const {item} = defineProps<PostItemProps>();
     width: 200px;
     height: 120px;
     filter: grayscale(90%);
-		transition: all 0.6s ease;
+    transition: all 0.6s ease;
   }
-	a {
-		transition: all 0.6s ease;
-	}
+  a {
+    transition: all 0.6s ease;
+  }
   &:hover {
-		a {
-		 @apply text-blue-700;
-		}
+    a {
+      @apply text-blue-700;
+    }
     img {
       filter: grayscale(0);
     }
