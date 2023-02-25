@@ -1,31 +1,32 @@
 <script setup lang="ts">
-import { ParsedContent } from "@nuxt/content/dist/runtime/types";
+import {ParsedContent} from '@nuxt/content/dist/runtime/types';
 
 interface PostItemProps {
   item: ParsedContent;
 }
 
-const { item } = defineProps<PostItemProps>();
-console.log('item', item)
+const {item} = defineProps<PostItemProps>();
 </script>
 
 <template>
-  <div class="post-item py-4 flex flew-row border-b border-slate-200">
+  <div
+    class="post-item py-4 flex flew-row items-center border-b border-slate-200 dark:border-slate-800"
+  >
     <div class="flex-1 mr-4">
       <h3 class="text-xl mb-4 font-bold">
         <a class="text-black-600" :href="item._path">{{ item.title }}</a>
       </h3>
-      <p class="text-slate-600">{{ item.description }}</p>
+      <p class="text-slate-600 dark:text-slate-400">{{ item.description }}</p>
       <div class="mt-4 space-x-2">
-        <span class="border border-slate-200 rounded p-1 text-xs text-slate-400"
-          >NuxtJS</span
-        >
-        <span class="border border-slate-200 rounded p-1 text-xs text-slate-400"
-          >VueJS</span
+        <span
+          v-for="i in item.tags?.split(',') ?? []"
+          :key="i"
+          class="border border-slate-300 rounded p-1 text-xs text-slate-400"
+          >{{ i }}</span
         >
       </div>
     </div>
-    <img :src="item.banner" alt="omori" />
+		<div class="rounded" :style="`width: 200px;height:120px;background-image: url(${item.banner});background-position:center;background-size:cover;`"></div>
   </div>
 </template>
 
@@ -44,6 +45,13 @@ console.log('item', item)
     a {
       @apply text-blue-700;
     }
+    img {
+      filter: grayscale(0);
+    }
+  }
+}
+html.dark {
+  .post-item {
     img {
       filter: grayscale(0);
     }

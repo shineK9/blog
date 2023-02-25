@@ -7,7 +7,7 @@ const content = useContent() as Record<string, unknown>;
 </script>
 
 <template>
-  <div class="max-w-4xl m-auto py-4 rounded relative">
+  <div class="max-w-5xl m-auto py-4 rounded relative">
     <Catalog
       class="fixed right-12"
       :toc="(content.toc as ComputedRef<Toc>).value as Toc"
@@ -16,11 +16,9 @@ const content = useContent() as Record<string, unknown>;
       <ContentDoc v-slot="{doc}">
         <h1>{{ doc.title }}</h1>
         <div
-          :style="
-            `background-image: url(${doc.banner});background-position: center;`
-          "
+				  :style="`background-image: url(${doc.banner});`"
           :alt="doc.title"
-          class="w-full h-80 border-b border-slate-200 my-6"
+          class="banner w-full h-80 my-6"
         ></div>
         <ContentRenderer :value="doc" />
       </ContentDoc>
@@ -30,11 +28,11 @@ const content = useContent() as Record<string, unknown>;
 
 <style lang="scss">
 .markdown-body {
-  @apply max-w-3xl m-auto;
-	p {
-	  line-height: 1.8;
-		font-weight: 400;
-	}
+  @apply max-w-4xl m-auto;
+  p {
+    line-height: 1.8;
+    font-weight: 400;
+  }
   h1 {
     font-size: 2rem;
     margin: 0.2rem 0;
@@ -49,9 +47,6 @@ const content = useContent() as Record<string, unknown>;
     margin: 1rem 0 0.4rem 0;
     font-weight: 500;
   }
-	code {
-	  @apply bg-slate-100 p-1 rounded;
-	}
   table {
     @apply border border-slate-200 w-full rounded;
     & th,
@@ -67,6 +62,22 @@ const content = useContent() as Record<string, unknown>;
   }
   img {
     margin: auto;
+  }
+
+	.banner {
+	  @apply rounded;
+    background-position: center center;
+    background-size: cover;
+	}
+}
+
+@media (max-width: 1350px) {
+  #catalog {
+    display: none;
+  }
+  .banner {
+    height: 230px;
+    width: 100%;
   }
 }
 </style>

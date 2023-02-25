@@ -1,9 +1,9 @@
 <script setup>
-import "animate.css";
+// import "animate.css";
 </script>
 
 <template>
-  <div id="app" class="font-serif">
+  <div id="app" class="dark:bg-slate-900 dark:text-slate-300 font-serif">
     <AppHeader />
     <main>
 			<Transition name="fade"
@@ -24,9 +24,9 @@ import "animate.css";
 	min-height: 100vh;
 }
 
-.top-line {
-  height: 10px;
-	background-image: linear-gradient(45deg,theme('colors.blue.500') 25%,theme('colors.white') 0,theme('colors.white') 50%,theme('colors.blue.500') 0,theme('colors.blue.500') 75%,theme('colors.white') 0);
-	background-size: 40px 40px;
+@media (max-width: 640px) {
+	#app {
+	  padding: 1rem;
+	}
 }
 </style>

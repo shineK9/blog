@@ -3,6 +3,7 @@ description: '前端发展日新月异，各种框架层出不穷，选择合适
 title: '使用现代化的工具搭建前端博客'
 draft: true
 banner: '/1_PNlbgb05IwSxOhAz0aA2rg-1024x501.png'
+tags: '其它'
 ---
 
 # the second post
