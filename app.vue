@@ -21,9 +21,14 @@
 <style lang="scss">
 #app {
   @apply font-sans;
-  font-family: 'Noto Sans SC', 'Noto Sans';
-	font-weight: 300;
+  font-family: 'Noto Sans SC';
 	min-height: 100vh;
+}
+
+@media (max-width: 1080px) {
+  #app {
+    @apply p-4;
+  }
 }
 
 @media (max-width: 640px) {

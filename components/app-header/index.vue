@@ -1,10 +1,10 @@
 <script setup lang="ts">
 const color = useColorMode();
 
-const isDark = computed(() => color.value === 'dark');
+const isDark = computed(() => color.value === "dark");
 
 function toggleDark() {
-  color.value = color.value === 'dark' ? 'light' : 'dark';
+  color.value = color.value === "dark" ? "light" : "dark";
 }
 </script>
 

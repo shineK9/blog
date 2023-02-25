@@ -25,11 +25,10 @@ export default defineNuxtConfig({
     'nuxt-icon',
     '@vueuse/nuxt',
     [
-      "@nuxtjs/google-fonts",
+      '@nuxtjs/google-fonts',
       {
         families: {
-          "Noto+Sans+SC": true,
-          "Noto+Sans": true,
+          'Noto+Sans+SC': true,
         },
       },
     ],
@@ -37,19 +36,19 @@ export default defineNuxtConfig({
       '@nuxt/content',
       {
         documentDriven: true,
+				highlight: {
+					theme: {
+						dark: 'github-dark',
+						default: 'github-light'
+					},
+					preload: ['json', 'js', 'ts', 'html', 'css', 'vue', 'diff', 'shell', 'markdown', 'yaml', 'bash', 'ini']
+				},
         sources: {
           // overwrite default source AKA `content` directory
           content: {
             driver: 'fs',
             prefix: appConfig.postPath, // All contents inside this source will be prefixed with `/docs`
             base: path.resolve(__dirname, 'content'),
-          },
-          // Additional sources
-          fa: {
-            prefix: '/fa', // All contents inside this source will be prefixed with `/fa`
-            driver: 'fs',
-            // ...driverOptions
-            base: path.resolve(__dirname, 'content-fa'), // Path for source directory
           },
         },
       },

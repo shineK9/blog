@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import {ParsedContent} from '@nuxt/content/dist/runtime/types';
+import { ParsedContent } from "@nuxt/content/dist/runtime/types";
 
 interface PostItemProps {
   item: ParsedContent;
 }
 
-const {item} = defineProps<PostItemProps>();
+const { item } = defineProps<PostItemProps>();
 </script>
 
 <template>
@@ -28,9 +28,7 @@ const {item} = defineProps<PostItemProps>();
     </div>
     <div
       class="banner rounded"
-      :style="
-        `background-image: url(${item.banner});background-position:center;background-size:cover;`
-      "
+      :style="`background-image: url(${item.banner});background-position:center;background-size:cover;`"
     ></div>
   </div>
 </template>
@@ -73,11 +71,11 @@ html.dark {
     @apply flex-col flex-col-reverse;
     div.banner {
       width: 100%;
-			height: 200px;
+      height: 200px;
     }
-		h3 {
-		  @apply my-2 p-0 text-center;
-		}
+    h3 {
+      @apply my-2 p-0 text-center;
+    }
   }
 }
 </style>

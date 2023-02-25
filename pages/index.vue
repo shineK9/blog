@@ -1,17 +1,13 @@
 <script setup lang="ts">
-import appConfig from '~~/app.config';
+import appConfig from "~~/app.config";
 
-const posts = (
-  await queryContent()
-    .limit(10)
-    .find()
-).filter(i => i._path?.startsWith(appConfig.postPath));
+const posts = (await queryContent().limit(10).find()).filter((i) =>
+  i._path?.startsWith(appConfig.postPath)
+);
 
-const recommendPosts = (
-  await queryContent()
-    .limit(10)
-    .find()
-).filter(i => i._path?.startsWith(appConfig.postPath));
+const recommendPosts = (await queryContent().limit(10).find()).filter((i) =>
+  i._path?.startsWith(appConfig.postPath)
+);
 </script>
 
 <template>
@@ -49,9 +45,6 @@ html.dark {
 }
 
 @media (max-width: 1080px) {
-  #app {
-    @apply p-4;
-  }
   aside {
     display: none;
   }

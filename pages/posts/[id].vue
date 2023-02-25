@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import {ComputedRef} from 'vue';
-import {Toc} from '@nuxt/content/dist/runtime/types';
-import Catalog from './catalog/index.vue';
+import { ComputedRef } from "vue";
+import { Toc } from "@nuxt/content/dist/runtime/types";
+import Catalog from "./catalog/index.vue";
 
 const content = useContent() as Record<string, unknown>;
 </script>
@@ -13,10 +13,10 @@ const content = useContent() as Record<string, unknown>;
       :toc="(content.toc as ComputedRef<Toc>).value as Toc"
     />
     <article class="markdown-body">
-      <ContentDoc v-slot="{doc}">
+      <ContentDoc v-slot="{ doc }">
         <h1>{{ doc.title }}</h1>
         <div
-				  :style="`background-image: url(${doc.banner});`"
+          :style="`background-image: url(${doc.banner});`"
           :alt="doc.title"
           class="banner w-full h-80 my-6"
         ></div>
@@ -28,24 +28,35 @@ const content = useContent() as Record<string, unknown>;
 
 <style lang="scss">
 .markdown-body {
-  @apply max-w-4xl m-auto;
+  font-weight: 400;
+  @apply max-w-4xl m-auto text-slate-700 dark:text-slate-400;
+	pre {
+	  @apply border border-slate-200 dark:border-slate-700 rounded p-2 text-sm my-2;
+		code {
+		  background-color: transparent!important;
+			padding: 0;
+		}
+	}
+	code {
+	 @apply bg-slate-50 dark:bg-slate-800 rounded p-1;
+	 font-family: monospace;
+	}
   p {
     line-height: 1.8;
-    font-weight: 300;
   }
   h1 {
     font-size: 2rem;
     margin: 0.2rem 0;
-    font-weight: 500;
+    font-weight: 400;
   }
   h2 {
     font-size: 1.2rem;
     margin: 1.5rem 0 0.4rem 0;
-    font-weight: 500;
+    font-weight: 400;
   }
   h3 {
     margin: 1rem 0 0.4rem 0;
-    font-weight: 500;
+    font-weight: 400;
   }
   table {
     @apply border border-slate-200 w-full rounded my-2;
@@ -64,11 +75,11 @@ const content = useContent() as Record<string, unknown>;
     margin: auto;
   }
 
-	.banner {
-	  @apply rounded;
+  .banner {
+    @apply rounded;
     background-position: center center;
     background-size: cover;
-	}
+  }
 }
 
 @media (max-width: 1350px) {
@@ -79,5 +90,13 @@ const content = useContent() as Record<string, unknown>;
     height: 230px;
     width: 100%;
   }
+}
+
+@media (max-width: 768px) {
+  .markdown-body {
+	  pre {
+			overflow-x: scroll;
+		}
+	}
 }
 </style>
