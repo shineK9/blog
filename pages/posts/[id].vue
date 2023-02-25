@@ -31,7 +31,7 @@ const content = useContent() as Record<string, unknown>;
   @apply max-w-4xl m-auto;
   p {
     line-height: 1.8;
-    font-weight: 400;
+    font-weight: 300;
   }
   h1 {
     font-size: 2rem;
@@ -39,7 +39,7 @@ const content = useContent() as Record<string, unknown>;
     font-weight: 500;
   }
   h2 {
-    font-size: 1rem;
+    font-size: 1.2rem;
     margin: 1.5rem 0 0.4rem 0;
     font-weight: 500;
   }
@@ -48,7 +48,7 @@ const content = useContent() as Record<string, unknown>;
     font-weight: 500;
   }
   table {
-    @apply border border-slate-200 w-full rounded;
+    @apply border border-slate-200 w-full rounded my-2;
     & th,
     & td {
       padding: 0.3rem 0.5rem;

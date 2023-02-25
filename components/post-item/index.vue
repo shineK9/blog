@@ -26,7 +26,12 @@ const {item} = defineProps<PostItemProps>();
         >
       </div>
     </div>
-		<div class="rounded" :style="`width: 200px;height:120px;background-image: url(${item.banner});background-position:center;background-size:cover;`"></div>
+    <div
+      class="banner rounded"
+      :style="
+        `background-image: url(${item.banner});background-position:center;background-size:cover;`
+      "
+    ></div>
   </div>
 </template>
 
@@ -49,12 +54,30 @@ const {item} = defineProps<PostItemProps>();
       filter: grayscale(0);
     }
   }
+  .banner {
+    width: 200px;
+    height: 120px;
+  }
 }
+
 html.dark {
   .post-item {
     img {
       filter: grayscale(0);
     }
+  }
+}
+
+@media (max-width: 1080px) {
+  .post-item {
+    @apply flex-col flex-col-reverse;
+    div.banner {
+      width: 100%;
+			height: 200px;
+    }
+		h3 {
+		  @apply my-2 p-0 text-center;
+		}
   }
 }
 </style>

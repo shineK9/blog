@@ -24,15 +24,15 @@ export default defineNuxtConfig({
     '@nuxtjs/tailwindcss',
     'nuxt-icon',
     '@vueuse/nuxt',
-    // [
-    //   "@nuxtjs/google-fonts",
-    //   {
-    //     families: {
-    //       "Noto+Sans+SC": true,
-    //       "Noto+Sans": true,
-    //     },
-    //   },
-    // ],
+    [
+      "@nuxtjs/google-fonts",
+      {
+        families: {
+          "Noto+Sans+SC": true,
+          "Noto+Sans": true,
+        },
+      },
+    ],
     [
       '@nuxt/content',
       {

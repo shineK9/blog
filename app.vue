@@ -21,6 +21,8 @@
 <style lang="scss">
 #app {
   @apply font-sans;
+  font-family: 'Noto Sans SC', 'Noto Sans';
+	font-weight: 300;
 	min-height: 100vh;
 }
 
