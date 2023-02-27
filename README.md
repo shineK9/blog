@@ -1,42 +1,13 @@
-# Nuxt 3 Minimal Starter
+# 我的个人博客
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+一个简洁的个人博客，基于 Nuxt 3 开发
 
-## Setup
+## Plans
 
-Make sure to install the dependencies:
-
-```bash
-# yarn
-yarn install
-
-# npm
-npm install
-
-# pnpm
-pnpm install
-```
-
-## Development Server
-
-Start the development server on http://localhost:3000
-
-```bash
-npm run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-npm run build
-```
-
-Locally preview production build:
-
-```bash
-npm run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+- [ ] 首页文章分页
+- [ ] 根据时间或者标签进行归档
+- [ ] 个人信息展示
+- [ ] 黑暗模式
+- [ ] 匿名评论
+- [ ] 更好的阅读体验
+- [ ] 数据统计(访问量，文章阅读数)

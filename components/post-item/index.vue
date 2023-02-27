@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import { ParsedContent } from "@nuxt/content/dist/runtime/types";
+import {ParsedContent} from '@nuxt/content/dist/runtime/types';
 
 interface PostItemProps {
   item: ParsedContent;
 }
 
-const { item } = defineProps<PostItemProps>();
+const {item} = defineProps<PostItemProps>();
 </script>
 
 <template>
@@ -17,18 +17,23 @@ const { item } = defineProps<PostItemProps>();
         <a class="text-black-600" :href="item._path">{{ item.title }}</a>
       </h3>
       <p class="text-slate-600 dark:text-slate-400">{{ item.description }}</p>
-      <div class="mt-4 space-x-2">
-        <span
-          v-for="i in item.tags?.split(',') ?? []"
-          :key="i"
-          class="border border-slate-300 rounded p-1 text-xs text-slate-400"
-          >{{ i }}</span
-        >
+      <div class="mt-4 flex flew-row justify-between text-xs text-slate-400">
+        <div class="space-x-2">
+          <span
+            v-for="i in item.tags?.split(',') ?? []"
+            :key="i"
+            class="border border-slate-300 rounded p-1"
+            >{{ i }}</span
+          >
+        </div>
+        <div>{{ item.createOn }}</div>
       </div>
     </div>
     <div
       class="banner rounded"
-      :style="`background-image: url(${item.banner});background-position:center;background-size:cover;`"
+      :style="
+        `background-image: url(${item.banner});background-position:center;background-size:cover;`
+      "
     ></div>
   </div>
 </template>

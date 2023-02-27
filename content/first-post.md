@@ -4,6 +4,7 @@ title: '使用现代化的工具搭建前端博客'
 draft: true
 banner: '/omori-release-date.jpg'
 tags: 'NuxtJS,VueJS'
+createOn: '2023-2-26'
 ---
 
 在现代化的前端开发中，使用工具化的开发流程能够提高开发效率，降低开发成本。本文将介绍如何使用现代化工具搭建一个前端博客。

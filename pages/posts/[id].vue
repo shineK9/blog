@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { ComputedRef } from "vue";
-import { Toc } from "@nuxt/content/dist/runtime/types";
-import Catalog from "./catalog/index.vue";
+import {ComputedRef} from 'vue';
+import {Toc} from '@nuxt/content/dist/runtime/types';
+import Catalog from './catalog/index.vue';
 
 const content = useContent() as Record<string, unknown>;
 </script>
@@ -9,18 +9,21 @@ const content = useContent() as Record<string, unknown>;
 <template>
   <div class="max-w-5xl m-auto py-4 rounded relative">
     <Catalog
+      v-if="content"
       class="fixed right-12"
       :toc="(content.toc as ComputedRef<Toc>).value as Toc"
     />
     <article class="markdown-body">
-      <ContentDoc v-slot="{ doc }">
-        <h1>{{ doc.title }}</h1>
-        <div
-          :style="`background-image: url(${doc.banner});`"
-          :alt="doc.title"
-          class="banner w-full h-80 my-6"
-        ></div>
-        <ContentRenderer :value="doc" />
+      <ContentDoc v-slot="{doc}">
+        <div slot-name="default">
+          <h1>{{ doc.title }}</h1>
+          <div
+            :style="`background-image: url(${doc.banner});`"
+            :alt="doc.title"
+            class="banner w-full h-80 my-6"
+          ></div>
+          <ContentRenderer :value="doc" />
+        </div>
       </ContentDoc>
     </article>
   </div>
@@ -30,17 +33,17 @@ const content = useContent() as Record<string, unknown>;
 .markdown-body {
   font-weight: 400;
   @apply max-w-4xl m-auto text-slate-700 dark:text-slate-400;
-	pre {
-	  @apply border border-slate-200 dark:border-slate-700 rounded p-2 text-sm my-2;
-		code {
-		  background-color: transparent!important;
-			padding: 0;
-		}
-	}
-	code {
-	 @apply bg-slate-50 dark:bg-slate-800 rounded p-1;
-	 font-family: monospace;
-	}
+  pre {
+    @apply border border-slate-200 dark:border-slate-700 rounded p-2 text-sm my-2;
+    code {
+      background-color: transparent !important;
+      padding: 0;
+    }
+  }
+  code {
+    @apply bg-slate-50 dark:bg-slate-800 rounded p-1;
+    font-family: monospace;
+  }
   p {
     line-height: 1.8;
   }
@@ -50,13 +53,30 @@ const content = useContent() as Record<string, unknown>;
     font-weight: 400;
   }
   h2 {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     margin: 1.5rem 0 0.4rem 0;
     font-weight: 400;
   }
   h3 {
-    margin: 1rem 0 0.4rem 0;
+    margin: 1.2rem 0 0.4rem 0;
     font-weight: 400;
+  }
+  ul {
+    @apply my-4;
+    li {
+      list-style-type: disc;
+      @apply ml-4;
+    }
+  }
+  h1,
+  a,
+  h2 a,
+  h3 a,
+  h4 a {
+    @apply text-inherit;
+  }
+  a {
+    @apply text-blue-500;
   }
   table {
     @apply border border-slate-200 w-full rounded my-2;
@@ -68,7 +88,7 @@ const content = useContent() as Record<string, unknown>;
     }
   }
   blockquote {
-    @apply border-l-4 border-slate-200 py-2;
+    @apply border-l-4 border-slate-200 px-2 my-2;
     @apply italic text-slate-500;
   }
   img {
@@ -94,9 +114,9 @@ const content = useContent() as Record<string, unknown>;
 
 @media (max-width: 768px) {
   .markdown-body {
-	  pre {
-			overflow-x: scroll;
-		}
-	}
+    pre {
+      overflow-x: scroll;
+    }
+  }
 }
 </style>

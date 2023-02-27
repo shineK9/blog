@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <div id="app" class="dark:bg-slate-900 dark:text-slate-300 font-serif">
+  <div id="app" class="bg-slate-50 dark:bg-slate-900 dark:text-slate-300 font-serif">
     <AppHeader />
     <main>
 			<Transition name="fade"

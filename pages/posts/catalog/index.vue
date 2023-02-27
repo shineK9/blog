@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import { Toc } from "@nuxt/content/dist/runtime/types";
+import {Toc} from '@nuxt/content/dist/runtime/types';
 
 interface Props {
   toc: Toc;
 }
 
-const { toc } = defineProps<Props>();
+const {toc} = defineProps<Props>();
 </script>
 
 <template>
@@ -17,14 +17,25 @@ const { toc } = defineProps<Props>();
     <p class="px-6 py-2 border-b border-slate-200 dark:border-slate-700">
       目录:
     </p>
-    <div
-      class="px-6 text-sm py-2 w-50 text-ellipsis overflow-hidden whitespace-nowrap hover:text-blue-500"
-      v-for="link in toc.links"
-      :key="link.id"
-    >
-      <a :href="`#${link.id}`">
-        {{ link.text }}
-      </a>
+    <div class="catalog-items">
+      <div
+        class="link px-6 text-sm py-2 w-50 text-ellipsis overflow-hidden whitespace-nowrap"
+        v-for="link in toc.links"
+        :key="link.id"
+      >
+        <a :href="`#${link.id}`">
+          {{ link.text }}
+        </a>
+        <div
+          class="link px-6 text-sm py-2 w-50 text-ellipsis overflow-hidden whitespace-nowrap"
+          v-for="cLink in link.children"
+          :key="cLink.id"
+        >
+          <a :href="`#${cLink.id}`">
+            {{ cLink.text }}
+          </a>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -32,6 +43,16 @@ const { toc } = defineProps<Props>();
 <style lang="scss">
 #catalog {
   opacity: 0.4;
+  transition: all 0.6s ease;
+	.catalog-items {
+		max-height: 500px;
+		overflow-y: scroll;
+	}
+  .link {
+    &:hover > a {
+      @apply text-blue-500;
+    }
+  }
   &:hover {
     opacity: 1;
   }
