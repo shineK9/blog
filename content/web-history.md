@@ -1,10 +1,10 @@
 ---
 title: Web 技术发展史
-draft: true
-banner: 'https://media.discordapp.net/attachments/990816855088328734/1079639459999526972/Stedy_drone_top_down_view_of_tropical_beach_7147d58d-3b37-4c49-95d1-9152ac5ff02b.png'
+draft: false
+banner: '/banner-web.jpeg'
 description: 如今各种形形色色的网页应用，最初是怎么什么样子的？又是如何发展成今天这个样子？本文将聊一聊主流 Web 技术的发展历史，梳理它们它们在你脑中的时间脉络，让你更清晰，更宏观的了解 Web 世界
 tags: 'Web,历史'
-createOn: '2023-2-27'
+createOn: '2023-3-04'
 ---
 
 如今各种形形色色的网页应用，最初是怎么什么样子的？又是如何发展成今天这个样子？
@@ -77,32 +77,3 @@ createOn: '2023-2-27'
 
 > 事实上，《JavaScript 二十年》这本书已经把 JavaScript 的历史讲的很清楚了，
 > 本文还是以介绍 Web 技术的主体脉络为主，就不继续深入 JavaScript 历史了，但是强烈建议大家自己去阅读一下这本书。
-
-### JQuery 时代
-
-TODO
-
-### MVVM 时代
-
-TODO
-
-### 全栈时代
-
-TODO
-
-段落参考
-
-- [JavaScript 20 年](https://cn.history.js.org/part-1.html)
-- [Netscape 和 Sun 的联合声明](http://home.netscape.com/newsref/pr/newsrelease67.html)
-
-## CSS 的发展和应用
-
-### CSS 3
-
-### 预处理器
-
-### BEM
-
-### Atomic CSS
-
-### UnoCSS & CSS-in-JS

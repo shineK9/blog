@@ -44,6 +44,10 @@ const content = useContent() as Record<string, unknown>;
     @apply bg-slate-50 dark:bg-slate-800 rounded p-1;
     font-family: monospace;
   }
+	ol {
+	  list-style-type: number;
+		@apply ml-4;
+	}
   p {
     line-height: 1.8;
   }

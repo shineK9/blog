@@ -17,8 +17,8 @@ const {toc} = defineProps<Props>();
     <p class="px-6 py-2 border-b border-slate-200 dark:border-slate-700">
       目录:
     </p>
-    <div class="catalog-items">
-      <div
+    <ol class="catalog-items ml-4 list-decimal">
+      <li
         class="link px-6 text-sm py-2 w-50 text-ellipsis overflow-hidden whitespace-nowrap"
         v-for="link in toc.links"
         :key="link.id"
@@ -26,17 +26,19 @@ const {toc} = defineProps<Props>();
         <a :href="`#${link.id}`">
           {{ link.text }}
         </a>
-        <div
-          class="link px-6 text-sm py-2 w-50 text-ellipsis overflow-hidden whitespace-nowrap"
-          v-for="cLink in link.children"
-          :key="cLink.id"
-        >
-          <a :href="`#${cLink.id}`">
-            {{ cLink.text }}
-          </a>
-        </div>
-      </div>
-    </div>
+        <ol>
+          <li
+            class="link px-6 text-sm py-2 w-50 text-ellipsis overflow-hidden whitespace-nowrap"
+            v-for="cLink in link.children"
+            :key="cLink.id"
+          >
+            <a :href="`#${cLink.id}`">
+              {{ cLink.text }}
+            </a>
+          </li>
+        </ol>
+      </li>
+    </ol>
   </div>
 </template>
 
@@ -44,10 +46,10 @@ const {toc} = defineProps<Props>();
 #catalog {
   opacity: 0.4;
   transition: all 0.6s ease;
-	.catalog-items {
-		max-height: 500px;
-		overflow-y: scroll;
-	}
+  .catalog-items {
+    max-height: 500px;
+    overflow-y: scroll;
+  }
   .link {
     &:hover > a {
       @apply text-blue-500;
