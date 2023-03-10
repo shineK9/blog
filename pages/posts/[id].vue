@@ -18,6 +18,7 @@ const content = useContent() as Record<string, unknown>;
         <div slot-name="default">
           <h1>{{ doc.title }}</h1>
           <div
+					  v-if="doc.banner"
             :style="`background-image: url(${doc.banner});`"
             :alt="doc.title"
             class="banner w-full h-80 my-6"
