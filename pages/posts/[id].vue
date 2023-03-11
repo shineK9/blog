@@ -51,6 +51,7 @@ const content = useContent() as Record<string, unknown>;
 	}
   p {
     line-height: 1.8;
+		@apply my-2;
   }
   h1 {
     font-size: 2rem;
