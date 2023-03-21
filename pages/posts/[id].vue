@@ -7,7 +7,7 @@ const content = useContent() as Record<string, unknown>;
 </script>
 
 <template>
-  <div class="max-w-5xl m-auto py-4 rounded relative">
+  <div class="max-w-3xl m-auto py-4 rounded relative">
     <Catalog
       v-if="content"
       class="fixed right-12"
